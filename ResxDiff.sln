@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResxDiff", "ResxDiff\ResxDiff.csproj", "{1966207D-B364-4C60-A903-6F7826B3A899}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResxDiffTest", "ResxDiffTest\ResxDiffTest.csproj", "{6D22F35D-40BE-4B35-81BB-69B7DCD03D88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{1966207D-B364-4C60-A903-6F7826B3A899}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1966207D-B364-4C60-A903-6F7826B3A899}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1966207D-B364-4C60-A903-6F7826B3A899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D22F35D-40BE-4B35-81BB-69B7DCD03D88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D22F35D-40BE-4B35-81BB-69B7DCD03D88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D22F35D-40BE-4B35-81BB-69B7DCD03D88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D22F35D-40BE-4B35-81BB-69B7DCD03D88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
