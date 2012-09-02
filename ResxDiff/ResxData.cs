@@ -27,7 +27,7 @@ namespace ResxDiff {
             Comment = XmlUtils.ValueOrNull(data.Element("comment"));
         }
 
-        public XElement ToElement() {
+        public XElement ToXml() {
             var data = new XElement("data");
             
             if (Name != null) data.SetAttributeValue("name", Name);

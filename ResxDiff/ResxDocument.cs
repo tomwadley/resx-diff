@@ -8,9 +8,7 @@ namespace ResxDiff {
     public class ResxDocument {
         public IList<ResxData> Data { get; set; }
 
-        public ResxDocument() {
-            Data = new List<ResxData>();
-        }
+        private readonly XDocument _xml;
 
         public ResxDocument(XDocument xml) {
             if (xml.Root == null || xml.Root.Name != "root") {
@@ -18,6 +16,18 @@ namespace ResxDiff {
             }
 
             Data = xml.Root.Elements("data").Select(elem => new ResxData(elem)).ToList();
+
+            _xml = new XDocument(xml);
+        }
+
+        public XDocument ToXml() {
+            if (_xml == null) return null;
+
+            var xml = new XDocument(_xml);
+            xml.Root.Elements("data").Remove();
+            xml.Root.Add(Data.Select(data => data.ToXml()).ToArray());
+
+            return xml;
         }
     }
 }

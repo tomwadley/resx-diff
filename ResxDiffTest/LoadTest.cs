@@ -14,11 +14,17 @@ namespace ResxDiffTest {
     public class LoadTest {
 
         private XDocument _test1;
+        private XDocument _test2;
 
         [SetUp]
         public void SetUp() {
-            var path = Path.Combine(Path.GetDirectoryName(GetType().Assembly.CodeBase), "resx", "Test1.resx");
-            _test1 = XDocument.Load(path);
+            var basePath = Path.GetDirectoryName(GetType().Assembly.CodeBase);
+
+            var test1Path = Path.Combine(basePath, "resx", "Test1.resx");
+            _test1 = XDocument.Load(test1Path);
+
+            var test2Path = Path.Combine(basePath, "resx", "Test2.resx");
+            _test2 = XDocument.Load(test2Path);
         }
 
         [Test]
@@ -36,18 +42,35 @@ namespace ResxDiffTest {
         }
 
         [Test]
-        public void ToXml() {
+        public void ResxDataToXml() {
             var data = new ResxData {
                                         Name = "A_key",
                                         Value = "A key",
                                         Space = "preserve"
                                     };
-            var elem = data.ToElement();
+            var elem = data.ToXml();
             
             Assert.AreEqual("data", elem.Name.ToString());
             Assert.AreEqual("A_key", elem.Attribute("name").Value);
             Assert.AreEqual("preserve", elem.Attribute(XNamespace.Xml + "space").Value);
             Assert.AreEqual("A key", elem.Element("value").Value);
+        }
+
+        [Test]
+        public void ResxDocumentToXml() {
+            var test1 = new ResxDocument(_test1);
+            Assert.AreEqual(_test1.ToString(), test1.ToXml().ToString());
+        }
+
+        [Test]
+        public void ResxDocumentToXmlWithChanges() {
+            var test1 = new ResxDocument(_test1);
+            test1.Data.Add(new ResxData {
+                                            Name = "Test_key_4",
+                                            Value = "Test value 4",
+                                            Space = "preserve"
+                                        });
+            Assert.AreEqual(_test2.ToString(), test1.ToXml().ToString());
         }
     }
 }
