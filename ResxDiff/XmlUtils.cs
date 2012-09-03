@@ -6,7 +6,7 @@ using System.Xml.Linq;
 
 namespace ResxDiff
 {
-    class XmlUtils
+    public static class XmlUtils
     {
         public static string ValueOrNull(XAttribute x) {
             return x != null ? x.Value : null;
