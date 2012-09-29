@@ -80,8 +80,9 @@ namespace ResxDiff {
             return d.Data.GroupBy(data => data.Name).Where(group => group.Count() > 1).Select(group => group.Key);
         }
 
+        // @todo Probably only text keys should have space="preserve". If that's the case, this should ignore non-text keys. Also applies to AddMissingSpacePreserve
         /// <summary>
-        /// Finds keys that appear more than once in 'd'
+        /// Finds keys that are missing the xml:space="preserve" attribute in 'd'
         /// </summary>
         /// <param name="d">The document to check for duplicate keys</param>
         /// <returns>The keys that appear more than once in 'd'</returns>
