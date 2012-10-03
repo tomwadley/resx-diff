@@ -1,6 +1,6 @@
 # ResxDiff
 
-Helps you deal with your growning number of .NET Resource files by quickly showing you the differences and similarities between them as well as performing simple operations on them.
+Helps you deal with your growing number of .NET Resource files by quickly showing you the differences and similarities between them as well as performing simple operations on them.
 
 `$ ResxDiffConsole --help`
     
