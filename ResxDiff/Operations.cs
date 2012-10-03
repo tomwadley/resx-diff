@@ -25,6 +25,17 @@ namespace ResxDiff {
         }
 
         /// <summary>
+        /// Copies values from one document to another
+        /// </summary>
+        /// <param name="keys">The names of the keys whose values should be copied</param>
+        /// <param name="from">The document to copy from</param>
+        /// <param name="to">The document to copy to</param>
+        public static void CopyValues(IEnumerable<string> keys, ResxDocument from, ResxDocument to) {
+            to.Data.Where(data => keys.Contains(data.Name)).ToList()
+                .ForEach(aData => aData.Value = from.Data.First(bData => bData.Name == aData.Name).Value);
+        }
+
+        /// <summary>
         /// Adds space="preserve" attributes to data elements which are missing it
         /// </summary>
         /// <param name="d">The document to add missing space="preserve" attributes to</param>

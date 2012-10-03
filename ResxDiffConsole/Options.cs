@@ -41,12 +41,15 @@ namespace ResxDiffConsole {
         [Option("c", "copy-missing-keys", HelpText = "Copies missing keys from the first file to the second")]
         public bool CopyMissingKeys { get; set; }
 
+        [Option("v", "copy-different-values", HelpText = "Copies differing values from the first file to the second")]
+        public bool CopyDifferentValues { get; set; }
+
         // Operations on any number of files
 
         [Option("a", "alphabetise", HelpText = "Sorts keys into alphabetical order")]
         public bool Alphabetise { get; set; }
 
-        [Option("v", "add-missing-spacepreserve", HelpText = "Adds xml:space=\"preserve\" attributes to keys that don't have it")]
+        [Option("r", "add-missing-spacepreserve", HelpText = "Adds xml:space=\"preserve\" attributes to keys that don't have it")]
         public bool AddMissingSpacePreserve { get; set; }
 
         [HelpOption]

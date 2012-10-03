@@ -76,6 +76,13 @@ namespace ResxDiffConsole {
                 manager.MarkForSaving(docs.Item2);
             }
 
+            if (options.CopyDifferentValues) {
+                var docs = manager.RequireTwoFiles();
+                var keys = Helpers.DifferentValues(docs.Item1, docs.Item2);
+                Operations.CopyValues(keys, docs.Item1, docs.Item2);
+                manager.MarkForSaving(docs.Item2);
+            }
+
             if (options.Alphabetise) {
                 var docs = manager.RequireFiles();
                 docs.ToList().ForEach(Operations.Alphabetise);
