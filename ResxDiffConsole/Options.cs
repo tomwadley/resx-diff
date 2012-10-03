@@ -52,6 +52,11 @@ namespace ResxDiffConsole {
         [Option("r", "add-missing-spacepreserve", HelpText = "Adds xml:space=\"preserve\" attributes to keys that don't have it")]
         public bool AddMissingSpacePreserve { get; set; }
 
+        // Formating
+
+        [Option("f", "full-data", HelpText = "Shows all fields from the data elements")]
+        public bool FullData { get; set; }
+
         [HelpOption]
         public string GetUsage() {
             var help = new HelpText {
@@ -60,8 +65,10 @@ namespace ResxDiffConsole {
                 AdditionalNewLineAfterOption = true,
                 AddDashesToOption = true
             };
+            help.AddPreOptionsLine("Usage: ResxDiff [OPTION]... [FILE]");
+            help.AddPreOptionsLine("Usage: ResxDiff [OPTION]... [FILE1] [FILE2]");
             help.AddPreOptionsLine("Usage: ResxDiff [OPTION]... [FILE]...");
-            help.AddPreOptionsLine("Lists information about a single .resx file, differences between two .resx files or performs operations on multiple .resx files");
+            help.AddPreOptionsLine("Displays information about .resx files, shows differences between .resx files and performs operations on .resx files");
             help.AddOptions(this);
             return help;
         }

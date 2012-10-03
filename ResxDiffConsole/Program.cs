@@ -14,12 +14,13 @@ namespace ResxDiffConsole {
             }
 
             var manager = new ResxDocumentManager(options);
+            var printer = new ResxDataPrinter(options.FullData);
 
             if (options.MissingKeys) {
                 var docs = manager.RequireTwoFiles();
                 var keys = Helpers.MissingKeys(docs.Item1, docs.Item2);
                 var data = keys.Select(k => docs.Item1.Data.First(d => d.Name == k));
-                Console.Out.Write(string.Join(Environment.NewLine, data.Select(SingleDataString)));
+                Console.Out.Write(string.Join(Environment.NewLine, data.Select(printer.SingleDataString)));
             }
 
             if (options.PresentKeys) {
@@ -27,7 +28,7 @@ namespace ResxDiffConsole {
                 var keys = Helpers.PresentKeys(docs.Item1, docs.Item2);
                 var leftData = keys.Select(k => docs.Item1.Data.First(d => d.Name == k));
                 var rightData = keys.Select(k => docs.Item2.Data.First(d => d.Name == k));
-                Console.Out.Write(string.Join(Environment.NewLine, leftData.Zip(rightData, DoubleDataString)));
+                Console.Out.Write(string.Join(Environment.NewLine, leftData.Zip(rightData, printer.DoubleDataString)));
             }
 
             if (options.DifferentValues) {
@@ -35,14 +36,14 @@ namespace ResxDiffConsole {
                 var keys = Helpers.DifferentValues(docs.Item1, docs.Item2);
                 var leftData = keys.Select(k => docs.Item1.Data.First(d => d.Name == k));
                 var rightData = keys.Select(k => docs.Item2.Data.First(d => d.Name == k));
-                Console.Out.Write(string.Join(Environment.NewLine, leftData.Zip(rightData, DoubleDataString)));
+                Console.Out.Write(string.Join(Environment.NewLine, leftData.Zip(rightData, printer.DoubleDataString)));
             }
 
             if (options.IdenticleValues) {
                 var docs = manager.RequireTwoFiles();
                 var keys = Helpers.IdenticleValues(docs.Item1, docs.Item2);
                 var data = keys.Select(k => docs.Item1.Data.First(d => d.Name == k));
-                Console.Out.Write(string.Join(Environment.NewLine, data.Select(SingleDataString)));
+                Console.Out.Write(string.Join(Environment.NewLine, data.Select(printer.SingleDataString)));
             }
 
             if (options.MismatchedMetadata) {
@@ -50,21 +51,21 @@ namespace ResxDiffConsole {
                 var keys = Helpers.MismatchedMetadata(docs.Item1, docs.Item2);
                 var leftData = keys.Select(k => docs.Item1.Data.First(d => d.Name == k));
                 var rightData = keys.Select(k => docs.Item2.Data.First(d => d.Name == k));
-                Console.Out.Write(string.Join(Environment.NewLine, leftData.Zip(rightData, DoubleDataString)));
+                Console.Out.Write(string.Join(Environment.NewLine, leftData.Zip(rightData, printer.DoubleDataString)));
             }
 
             if (options.DuplicateKeys) {
                 var doc = manager.RequireOneFile();
                 var keys = Helpers.DuplicateKeys(doc);
                 var data = keys.Select(k => doc.Data.First(d => d.Name == k));
-                Console.Out.Write(string.Join(Environment.NewLine, data.Select(SingleDataString)));
+                Console.Out.Write(string.Join(Environment.NewLine, data.Select(printer.SingleDataString)));
             }
 
             if (options.MissingSpacePreserve) {
                 var doc = manager.RequireOneFile();
                 var keys = Helpers.MissingSpacePreserve(doc);
                 var data = keys.Select(k => doc.Data.First(d => d.Name == k));
-                Console.Out.Write(string.Join(Environment.NewLine, data.Select(SingleDataString)));
+                Console.Out.Write(string.Join(Environment.NewLine, data.Select(printer.SingleDataString)));
             }
 
             // Operations
@@ -96,26 +97,6 @@ namespace ResxDiffConsole {
             }
 
             manager.SaveMarkedDocuments();
-        }
-
-        static string SingleDataString(ResxData data) {
-            var sb = new StringBuilder();
-            sb.Append("key = ");
-            sb.AppendLine(data.Name);
-            sb.Append("val = ");
-            sb.AppendLine(data.Value);
-            return sb.ToString();
-        }
-
-        static string DoubleDataString(ResxData leftData, ResxData rightData) {
-            var sb = new StringBuilder();
-            sb.Append("key = ");
-            sb.AppendLine(leftData.Name);
-            sb.Append("lval = ");
-            sb.AppendLine(leftData.Value);
-            sb.Append("rval = ");
-            sb.AppendLine(rightData.Value);
-            return sb.ToString();
         }
     }
 }
