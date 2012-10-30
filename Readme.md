@@ -2,6 +2,8 @@
 
 Helps you deal with your growing number of .NET Resource files by quickly showing you the differences and similarities between them as well as performing simple operations on them.
 
+## Usage
+
 `$ ResxDiffConsole --help`
     
     ResxDiff 0.1
@@ -48,7 +50,15 @@ Helps you deal with your growing number of .NET Resource files by quickly showin
 
       --help                             Display this help screen.
 
+## Build instructions
+
+This is using a VS2010 solution file. Dependencies are installed via NuGet. Package restore has been enabled for this solution. That means that in order to build, you have to be running a recent version of NuGet and have "Allow NuGet to download missing packages during build" enabled in the settings as shown [here](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages).
+
+Note: if you having trouble upgrading NuGet, see [this](http://docs.nuget.org/docs/reference/known-issues#Upgrading_to_latest_NuGet_from_an_older_version_causes_a_signature_verification_error.)
+
+After the dependencies have been downloaded by NuGet, it should build. Run the exe in place or put it somewhere in your path for convenient access.
+
 ---
 
-MIT licenced. More features coming soon (hopefully). Pull requests appreciated :)
+MIT licenced. Pull requests appreciated :)
 
