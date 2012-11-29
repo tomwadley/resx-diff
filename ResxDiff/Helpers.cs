@@ -48,7 +48,7 @@ namespace ResxDiff {
         /// <param name="a">The first document</param>
         /// <param name="b">The second document</param>
         /// <returns>The keys present in 'a' and 'b' which have the same values</returns>
-        public static IEnumerable<string> IdenticleValues(ResxDocument a, ResxDocument b) {
+        public static IEnumerable<string> IdenticalValues(ResxDocument a, ResxDocument b) {
             return PresentKeys(a, b).Where(name =>
                                            a.Data.First(aData => aData.Name == name).Value ==
                                            b.Data.First(bData => bData.Name == name).Value);

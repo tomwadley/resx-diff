@@ -42,10 +42,10 @@ namespace ResxDiffTest {
         }
 
         [Test]
-        public void IdenticleValuesTest() {
-            Assert.That(Helpers.IdenticleValues(_test1, _test2), Is.EquivalentTo(new[] { "Test_key_1", "Test_key_2", "Test_key_3" }));
-            Assert.That(Helpers.IdenticleValues(_test1, _test3), Is.EquivalentTo(new[] { "Test_key_1", "Test_key_3" }));
-            Assert.That(Helpers.IdenticleValues(_test2, _test3), Is.EquivalentTo(new[] { "Test_key_1", "Test_key_3" }));
+        public void IdenticalValuesTest() {
+            Assert.That(Helpers.IdenticalValues(_test1, _test2), Is.EquivalentTo(new[] { "Test_key_1", "Test_key_2", "Test_key_3" }));
+            Assert.That(Helpers.IdenticalValues(_test1, _test3), Is.EquivalentTo(new[] { "Test_key_1", "Test_key_3" }));
+            Assert.That(Helpers.IdenticalValues(_test2, _test3), Is.EquivalentTo(new[] { "Test_key_1", "Test_key_3" }));
         }
 
         [Test]

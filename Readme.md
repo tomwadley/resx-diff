@@ -23,8 +23,8 @@ Helps you deal with your growing number of .NET Resource files by quickly showin
       -d, --different-values             Finds keys present in both files whos
                                          values differ
 
-      -i, --identicle-values             Finds keys present in both files with
-                                         identicle values
+      -i, --identical-values             Finds keys present in both files with
+                                         identical values
 
       -s, --mismatched-metadata          Finds keys present in both files which
                                          have differing metadata (type, mimetype,

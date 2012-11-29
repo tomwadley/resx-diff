@@ -22,8 +22,8 @@ namespace ResxDiffConsole {
         [Option("d", "different-values", HelpText = "Finds keys present in both files whos values differ")]
         public bool DifferentValues { get; set; }
 
-        [Option("i", "identicle-values", HelpText = "Finds keys present in both files with identicle values")]
-        public bool IdenticleValues { get; set; }
+        [Option("i", "identical-values", HelpText = "Finds keys present in both files with identical values")]
+        public bool IdenticalValues { get; set; }
 
         [Option("s", "mismatched-metadata", HelpText = "Finds keys present in both files which have differing metadata (type, mimetype, space or comment)")]
         public bool MismatchedMetadata { get; set; }

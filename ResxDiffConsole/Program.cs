@@ -39,9 +39,9 @@ namespace ResxDiffConsole {
                 Console.Out.Write(string.Join(Environment.NewLine, leftData.Zip(rightData, printer.DoubleDataString)));
             }
 
-            if (options.IdenticleValues) {
+            if (options.IdenticalValues) {
                 var docs = manager.RequireTwoFiles();
-                var keys = Helpers.IdenticleValues(docs.Item1, docs.Item2);
+                var keys = Helpers.IdenticalValues(docs.Item1, docs.Item2);
                 var data = keys.Select(k => docs.Item1.Data.First(d => d.Name == k));
                 Console.Out.Write(string.Join(Environment.NewLine, data.Select(printer.SingleDataString)));
             }
