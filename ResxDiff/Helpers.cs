@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace ResxDiff {
+namespace ResxDiffLib {
     public static class Helpers {
         
         /// <summary>

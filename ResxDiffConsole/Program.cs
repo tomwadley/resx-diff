@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Linq;
-using System.Text;
 using CommandLine;
-using ResxDiff;
+using ResxDiffLib;
 
 namespace ResxDiffConsole {
     class Program {

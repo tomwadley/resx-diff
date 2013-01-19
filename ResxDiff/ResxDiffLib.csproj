@@ -8,8 +8,8 @@
     <ProjectGuid>{1966207D-B364-4C60-A903-6F7826B3A899}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ResxDiff</RootNamespace>
-    <AssemblyName>ResxDiff</AssemblyName>
+    <RootNamespace>ResxDiffLib</RootNamespace>
+    <AssemblyName>ResxDiffLib</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Xml.Linq;
 
-namespace ResxDiff {
+namespace ResxDiffLib {
     public class ResxDocument {
         public IList<ResxData> Data { get; set; }
 

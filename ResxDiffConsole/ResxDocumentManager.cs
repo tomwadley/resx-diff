@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
-using ResxDiff;
+using ResxDiffLib;
 
 namespace ResxDiffConsole {
     class ResxDocumentManager {

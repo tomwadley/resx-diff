@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.Linq;
 
-namespace ResxDiff {
+namespace ResxDiffLib {
     public class ResxData {
         public string Name { get; set; }
         public string Type { get; set; }
