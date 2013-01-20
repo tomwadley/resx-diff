@@ -3,7 +3,7 @@
   <metadata>
     <id>resxdiff</id>
     <title>ResxDiff</title>
-    <version>0.1</version>
+    <version>0.1.0.20130120</version>
     <authors>Tom Wadley</authors>
     <owners>Tom Wadley</owners>
     <description>Helps you deal with your growing number of .NET Resource files by quickly showing you the differences and similarities between them as well as performing simple operations on them.</description>
@@ -12,6 +12,7 @@
     <copyright>Tom Wadley 2012</copyright>
     <licenseUrl>https://github.com/tomwadley/resx-diff/blob/v0.1/LICENCE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/tomwadley/resx-diff/blob/master/assets/resxdiff-128x128.png</iconUrl>
   </metadata>
   <files>
     <file src="resxdiff\**" target="resxdiff" />
