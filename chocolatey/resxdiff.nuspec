@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>resxdiff</id>
+    <title>ResxDiff</title>
+    <version>0.1</version>
+    <authors>Tom Wadley</authors>
+    <owners>Tom Wadley</owners>
+    <description>Helps you deal with your growing number of .NET Resource files by quickly showing you the differences and similarities between them as well as performing simple operations on them.</description>
+    <projectUrl>https://github.com/tomwadley/resx-diff</projectUrl>
+    <tags>resx resources diff utility tool</tags>
+    <copyright>Tom Wadley 2012</copyright>
+    <licenseUrl>https://github.com/tomwadley/resx-diff/blob/v0.1/LICENCE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+  </metadata>
+  <files>
+    <file src="resxdiff\**" target="resxdiff" />
+  </files>
+</package>
