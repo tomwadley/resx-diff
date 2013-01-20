@@ -2,9 +2,17 @@
 
 Helps you deal with your growing number of .NET Resource files by quickly showing you the differences and similarities between them as well as performing simple operations on them.
 
+## Installing
+
+You can install ResxDiff via the [Chocolatey package manager](http://chocolatey.org/packages/resxdiff).
+
+`C:\> cinst resxdiff`
+
+Or build it yourself (scroll down for build instructions).
+
 ## Usage
 
-`$ ResxDiffConsole --help`
+`$ ResxDiff --help`
     
     ResxDiff 0.1
     Copyright (C) 2012 Tom Wadley
